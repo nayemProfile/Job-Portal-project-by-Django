@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    nav {
+      background-color: #3498db;
+      color: white;
+      padding: 15px 20px;
+      text-align: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      margin: 0 15px;
+      font-size: 18px;
+      transition: color 0.3s ease-in-out;
+    }
+
+    nav a:hover {
+      color: #2c3e50;
+    }
+
+    @media screen and (max-width: 600px) {
+      nav {
+        flex-direction: column;
+      }
+
+      nav a {
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    {% include 'navbar.html' %}
+    {% block content %}
+    {% endblock content %}
+
+
+</body>
+</html>

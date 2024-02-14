@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+
+    table {
+      border-collapse: collapse;
+      width: 80%;
+      margin: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: white;
+    }
+
+    th, td {
+      border: 1px solid #dddddd;
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #3498db;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+{% extends 'base.html' %}
+{% block content %}
+<h1>Job Details</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Company Name</th>
+        <th>Job Position</th>
+        <th>Job Place</th>
+        <th>Job Type</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in job %}
+      <tr>
+        <td>{{i.company_name}}</td>
+        <td>{{i.job_position}}</td>
+        <td>{{i.job_place}}</td>
+        <td>{{i.job_type}}</td>
+        <td>
+          <a href="">edit</a>
+          <a href="">delete</a>
+        </td>
+      </tr>
+      {% endfor %}
+      
+    </tbody>
+  </table>
+  <div class="container">
+    <form action="{% url 'jobAdd' %}" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}
+</body>
+</html>

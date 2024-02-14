@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grades</title>
+</head>
+<body>
+    <h1>Grades</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Student</th>
+                <th>Subject</th>
+                <th>Marks</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in grades %}
+            <tr>
+                <td>{{ grade.student }}</td>
+                <td>{{ grade.subject }}</td>
+                <td>{{ grade.marks }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

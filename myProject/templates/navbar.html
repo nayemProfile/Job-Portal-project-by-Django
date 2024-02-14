@@ -1,0 +1,16 @@
+<nav>
+    <a class="active" href="{% url 'dashboard' %}">Home</a>
+    <a class="active" href="{% url 'viewjobPage' %}">View Job</a>
+    <a href="{% url 'logoutPage' %}">logout</a>
+
+
+    <div id="search-div">
+      <form action="{% url 'search' %}" method="GET">
+        <input type="text" name="q" placeholder="Search...">
+        <button type="submit">Search</button>
+      </form>
+    </div>
+    
+
+
+  </nav>
